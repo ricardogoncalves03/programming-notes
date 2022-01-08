@@ -5,6 +5,10 @@
 ```bash
 brownie init
 ```
+If you installed Brownie with pipenv, run this command instead:
+```bash
+brownie init --force
+```
 
 ## Compile code
 ```bash

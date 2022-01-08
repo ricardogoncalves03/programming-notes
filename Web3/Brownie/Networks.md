@@ -43,7 +43,16 @@ load_dotenv()
 brownie run scripts/deploy.py --network rinkeby
 ```
 
-## Add new networks example
+## Add new networks examples
 ```bash
 brownie networks add Ethereum ganache-local host=http:/0.0.0.0:8545 chainid=1337
+```
+
+```bash
+brownie networks add development mainnet-fork cmd=ganache-cli host=localhost fork=https://eth-mainnet.alchemyapi.io/v2/6lND9dYAUQ1RopEt1jKP-map_7NjuKMS accounts=10 mnemonic=brownie port=8545
+```
+
+## Delete Internal networks
+```bash
+brownie networks delete mainnet-fork
 ```
