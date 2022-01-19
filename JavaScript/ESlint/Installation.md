@@ -7,33 +7,29 @@ npm install eslint --save-dev
 ./node_modules/.bin/eslint --init
 ```
 
-### .eslintrc.json file:
+### .eslintrc.json file react example:
 ```json
 {
     "env": {
-        "commonjs": true,
-        "es2021": true,
-        "node": true
+        "browser": true,
+        "es2021": true
     },
     "extends": [
-        "airbnb-base"
+        "eslint:recommended",
+        "plugin:react/recommended",
+        "plugin:react/jsx-runtime"
     ],
     "parserOptions": {
-        "ecmaVersion": 13
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module"
     },
+    "plugins": [
+        "react"
+    ],
     "rules": {
-        "no-console": "off"
     }
 }
 ```
-## If ESlint doesn't work and gives an error like:
-```bash
-Failed to load config "airbnb-base" to extend from.
-```
-**Install:**
-```bash
-npm install -g install-peerdeps
-install-peerdeps --dev eslint-config-airbnb
-install-peerdeps --dev eslint-config-airbnb-base
-```
-Source: https://stackoverflow.com/questions/69733256/failed-to-load-config-airbnb-to-extend-from-gitlab-ci
